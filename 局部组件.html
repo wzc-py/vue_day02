@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/vue.min.js"></script>
+</head>
+<body>
+<div id="v2">
+    <one></one>
+    <two></two>
+</div>
+<hr>
+<div id="v3">
+    <one></one>
+    <two></two>
+</div>
+
+<script>
+    // let one ={
+    //     template:`<div>第一个组件</div>`,
+    // }
+    // let two ={
+    //     template: `<div>第二个组件</div>`,
+    // }
+    // Vue.component('one',one)
+    //
+    // new Vue({
+    //     el: "#v2",
+    //     data: {},
+    //     components:{
+    //         // 'one':one,
+    //         'two':two,
+    //     }
+    // })
+
+
+    let one ={
+        template:`<div>第一个组件</div>`,
+    }
+    let two ={
+        template: `<div>第二个组件</div>`,
+    }
+    Vue.component('one',one)
+
+    new Vue({
+        el: "#v2",
+        data: {},
+        components:{
+            'two':two,
+        }
+    })
+
+    new Vue({
+        el:'#v3',
+    })
+</script>
+</body>
+</html>
