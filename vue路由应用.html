@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/vue.min.js"></script>
+    <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
+</head>
+<body>
+<div id="v2">
+    <h3>系统欢迎页</h3>
+    <router-link to="/index">访问首页</router-link>
+    <router-link to="/stu">学生管理首页</router-link>
+    <hr>
+    <router-view></router-view>
+</div>
+
+
+<script>
+    // let index = {
+    //     template:`<div>
+    //     <h3>这是index首页</h3>
+    //     <h4>欢迎访问信息管理系统</h4>
+    //     </div>`,
+    // }
+    //
+    // let stu = {
+    //     template:`<div>
+    //     <h3>用户首页</h3>
+    //     <table>
+    //         <tr>
+    //           <td>ID</td>
+    //           <td>姓名</td>
+    //           <td>年龄</td>
+    //           <td>操作</td>
+    //         </tr>
+    //         <tr v-for="user in user_list" :key="user.id">
+    //           <td>{{ user.id }}</td>
+    //           <td>{{ user.name }}</td>
+    //           <td>{{ user.age }}</td>
+    //           <td><a href="">删除</a> | <a href="">修改</a></td>
+    //         </tr>
+    //     </table>
+    //     </div>`,
+    //     data(){
+    //         return{
+    //             user_list:[
+    //                 {id:1,name:'a1',age:18},
+    //                 {id:2,name:'a2',age:20},
+    //                 {id:3,name:'a3',age:58},
+    //                 {id:4,name:'a4',age:62},
+    //             ]
+    //         }
+    //     },
+    // }
+    //
+    // let myRouter = new VueRouter({
+    //     routes:[
+    //         {path:'/index',component:index},
+    //         {path:'/stu',component:stu},
+    //     ]
+    // })
+
+
+    let index = {
+        template:`<div>
+        <h3>这是index首页</h3>
+        <h4>欢迎访问信息管理系统</h4>
+        </div>`,
+    }
+
+    let stu = {
+        template:`<div>
+        <h3>用户首页</h3>
+        <table>
+            <tr>
+              <td>ID</td>
+              <td>姓名</td>
+              <td>年龄</td>
+              <td>工资</td>
+              <td>操作</td>
+            </tr>
+            <tr v-for="user in user_list" :key="user.id">
+              <td>{{ user.id }}</td>
+              <td>{{ user.name }}</td>
+              <td>{{ user.age }}</td>
+              <td>{{ user.salary }}</td>
+              <td><a href="">删除</a> | <a href="">修改</a></td>
+            </tr>
+        </table>
+        </div>`,
+        data(){
+            return{
+                user_list:[
+                    {id:1,name:'a1',age:18,salary:5555},
+                    {id:2,name:'a2',age:20,salary:10000},
+                    {id:3,name:'a3',age:58,salary:6666},
+                    {id:4,name:'a4',age:62,salary:8888},
+                ]
+            }
+        },
+    }
+
+    let myRouter = new VueRouter({
+        routes:[
+            {path:'/index',component:index},
+            {path:'/stu',component:stu},
+        ]
+    })
+
+    new Vue({
+        el: "#v2",
+        data: {},
+        router:myRouter,
+    })
+</script>
+</body>
+</html>
