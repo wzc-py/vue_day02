@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/vue.min.js"></script>
+</head>
+<body>
+<div id="v2">
+    <com></com>
+    <h3>{{username}}</h3>
+</div>
+
+<script>
+    // let com = {
+    //     template:`
+    //     <div>第一个组件
+    //     <br>
+    //     <h3>组件中的data：{{name}}</h3>
+    //     </div>
+    //     `,
+    //     data: function () {
+    //         return {
+    //             name:'ssss',
+    //         }
+    //     }
+    // }
+    // Vue.component('com',com)
+
+
+    let com ={
+        template:`
+        <div>
+        还是组件
+        <br>
+        <h4>data:{{name}}</h4>
+        </div>
+        `,
+        data: function () {
+            return{
+                name:'111111111'
+            }
+        }
+    }
+    Vue.component('com',com)
+
+    new Vue({
+        el: "#v2",
+        data: {
+            username:'aaaaa',
+        }
+    })
+</script>
+</body>
+</html>
