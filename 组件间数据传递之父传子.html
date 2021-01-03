@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/vue.min.js"></script>
+</head>
+<body>
+<!--<div id="v2">-->
+<!--    <input type="text" v-model="name">-->
+<!--    <br>-->
+<!--    父组件：{{name}}-->
+<!--    <hr>-->
+<!--    <com :test="name"></com>-->
+<!--</div>-->
+
+<div id="v2">
+    <input type="text" v-model="name">
+    <br>
+    父组件：{{name}}
+    <hr>
+    <com :test="name"></com>
+</div>
+
+<script>
+    // let com ={
+    //     template:`
+    //     <div>
+    //     父组件传递的用户名{{test}}
+    //     </div>
+    //     `,
+    //     props:['test'],
+    // }
+
+    let com ={
+        template:`
+        <div>
+        父组件传递的用户名{{test}}
+        </div>
+        `,
+        props:['test'],
+    }
+
+    new Vue({
+        el: "#v2",
+        data: {
+            name:'',
+        },
+        components:{
+            com:com,
+        }
+    })
+</script>
+</body>
+</html>
