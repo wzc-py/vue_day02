@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/vue.min.js"></script>
+    <style>
+        .one {
+            color: red;
+        }
+        .two {
+            color: green;
+        }
+    </style>
+</head>
+<body>
+<div id="v2">
+    <com user="sss"></com>
+    <com user="sss" color="one"></com>
+    <com user="sss" color="two"></com>
+</div>
+
+<script>
+    // let com ={
+    //     template:`
+    //         <div :class="color">第一个组件</div>
+    //     `,
+    //     props:['user','color'],
+    //     created:function () {
+    //         console.log(this.user);
+    //     }
+    // }
+
+    let com = {
+        template:`<div :class="color">第一个组件</div>`,
+        props:['user','color'],
+        created:function () {
+            console.log(this.user);
+            console.log(this.color);
+        }
+    }
+
+    new Vue({
+        el: "#v2",
+        data: {},
+        components:{
+            com:com,
+        }
+    })
+</script>
+</body>
+</html>
