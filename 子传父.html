@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/vue.min.js"></script>
+</head>
+<body>
+<div id="v2">
+    父组件中的name:{{name}}
+    <hr>
+    <com @btn="clickMe"></com>
+</div>
+
+<script>
+    // let com ={
+    //     template:`
+    //     <div>这是子组件：
+    //     <button @click="cli">点我</button>
+    //     </div>
+    //     `,
+    //     methods:{
+    //         cli(){
+    //             this.$emit('btn',this.name);
+    //         },
+    //     },
+    //     data: function () {
+    //         return{
+    //             name:'铁柱',
+    //         }
+    //     }
+    // }
+    //
+    // new Vue({
+    //     el: "#v2",
+    //     data: {
+    //         name:'土豆',
+    //     },
+    //     methods: {
+    //         clickMe(name){
+    //             this.name = name;
+    //         },
+    //     },
+    //     components:{
+    //         com:com,
+    //     }
+    // })
+
+
+    let com ={
+        template:`
+        <div>这是子组件：
+        <button @click="cli">点我</button>
+        </div>`,
+        methods:{
+            cli(){
+                this.$emit('btn',this.name);
+            },
+        },
+        data: function () {
+            return{
+                name:'铁柱',
+            }
+        }
+    }
+
+    new Vue({
+        el: "#v2",
+        data: {
+            name:'土豆',
+        },
+        methods: {
+            clickMe(name){
+                this.name = name;
+            },
+        },
+        components:{
+            com:com,
+        }
+    })
+</script>
+</body>
+</html>
