@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/vue.min.js"></script>
+</head>
+<body>
+<div id="v2">
+    <span id="span" @click="num">{{count}}</span>
+</div>
+
+<script>
+    // new Vue({
+    //     el: "#v2",
+    //     data: {
+    //         count:20,
+    //     },
+    //     methods:{
+    //         num(){
+    //             this.count--;
+    //         },
+    //     },
+    //     beforeCreate:function () {
+    //         console.log("beforeCreate:" + this.count);
+    //     },
+    //     created:function () {
+    //         console.log('created:' + this.count);
+    //     },
+    //     beforeMount:function () {
+    //         console.log('beforeMount:'+document.getElementById('span').innerText);
+    //     },
+    //     mounted:function (){
+    //         console.log('mounted:'+document.getElementById('span').innerText);
+    //     },
+    //     beforeUpdate:function () {
+    //         console.log('beforeUpdate:'+this.count);
+    //         console.log('beforeUpdate:'+document.getElementById('span').innerText);
+    //     },
+    //     updated:function () {
+    //         console.log('updated:'+this.count);
+    //         console.log('updated:'+document.getElementById('span').innerText);
+    //     },
+    //     beforeDestroy:function () {
+    //
+    //     },
+    //     destroyed:function () {
+    //
+    //     }
+    // })
+
+
+    new Vue({
+        el:'#v2',
+        data:{
+            count:18,
+        },
+        methods:{
+            num(){
+                this.count++;
+            },
+        },
+        beforeCreate:function () {
+            console.log('beforeCreate:'+this.count);
+        },
+        created:function () {
+            console.log('created:'+this.count);
+        },
+        beforeMount:function () {
+            console.log('beforeMount:'+document.getElementById('span').innerText);
+        },
+        mounted:function () {
+            console.log('mounted:'+document.getElementById('span').innerText);
+        },
+        beforeUpdate:function () {
+            console.log('beforeUpdate:'+this.count);
+            console.log('beforeUpdate:'+document.getElementById('span').innerText);
+        },
+        updated:function () {
+            console.log('updated:'+this.count);
+            console.log('updated:'+document.getElementById('span').innerText);
+        },
+        beforeDestory:function () {
+
+        },
+        destroyed:function () {
+
+        }
+    })
+</script>
+</body>
+</html>
