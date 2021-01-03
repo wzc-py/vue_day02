@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/vue.min.js"></script>
+</head>
+<body>
+<div id="v2">
+    <com></com>
+</div>
+
+<script>
+    // let sec = {
+    //     template:`
+    //     <div>这是我的分页组件
+    //     <div>嵌套的div</div>
+    //     <h3>{{count}}</h3>
+    //     <button @click="ccc">点我</button>
+    //     <h4>{{ title }}</h4>
+    //     </div>
+    //     `,
+    //     data:function () {
+    //         return{
+    //             count:42,
+    //             title:"sssss",
+    //         }
+    //     },
+    //     methods:{
+    //         ccc(){
+    //             this.count--;
+    //         },
+    //     },
+    //     updated:function () {
+    //         if (this.count >= 40){
+    //             this.title = '中老年';
+    //         }else {
+    //             this.title = '青壮年';
+    //         }
+    //     },
+    // }
+    // Vue.component('com',sec)
+
+
+    let sec = {
+        template:`
+        <div>这是分页组件
+        <div>嵌套的div</div>
+        <h3>{{count}}</h3>
+        <button @click="change">点我</button>
+        <h4>{{ title }}</h4>
+        </div>
+        `,
+        data:function () {
+            return{
+                count:42,
+                title:"sssss",
+            }
+        },
+        methods:{
+            change(){
+                this.count--;
+            },
+        },
+        updated:function () {
+            if (this.count >= 40){
+                this.title = '中老年';
+            }else {
+                this.title = '青壮年';
+            }
+        },
+    }
+    Vue.component('com',sec)
+
+
+    new Vue({
+        el: "#v2",
+        data: {}
+    })
+</script>
+</body>
+</html>
