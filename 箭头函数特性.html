@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/vue.min.js"></script>
+</head>
+<body>
+<div id="v2">
+
+</div>
+
+<script>
+    // let user = {
+    //     name:"aa",
+    //     pwd:'123',
+    //     a1:function () {
+    //         console.log(this.name);
+    //         console.log(this.pwd);
+    //     }
+    // }
+    // user.a1()
+    //
+    // let stu = {
+    //     name:"ss",
+    //     a1:function () {
+    //         setTimeout(function (){
+    //             console.log(this.name);
+    //         },1000)
+    //     }
+    // }
+    // stu.a1()
+    //
+    // let stud = {
+    //     name:'gg',
+    //     a1:function () {
+    //         setTimeout(() => {
+    //             console.log(this.name);
+    //         })
+    //     }
+    // }
+    // stud.a1()
+
+
+    let user = {
+        name:'qq',
+        hh:function () {
+            console.log(this.name);
+        }
+    }
+    user.hh()
+
+    let stu = {
+        name:'ww',
+        hh:function () {
+            setTimeout(function () {
+                console.log(this.name);
+            })
+        }
+    }
+    stu.hh()
+
+    let stus = {
+        name:'ll',
+        hh:function () {
+            setTimeout(() => {
+                console.log(this.name);
+            },1000)
+        }
+    }
+    stus.hh()
+
+</script>
+</body>
+</html>
