@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/vue.min.js"></script>
+    <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
+</head>
+<body>
+<div id="v2">
+    <h3>我是页头</h3>
+    <router-link to="/index">系统首页</router-link>
+    <router-link to="/stu">学生管理首页</router-link>
+    <hr>
+    <router-view></router-view>
+</div>
+
+
+<script>
+    let one = {
+        template:`<div>百知管理系统</div>`,
+    }
+
+    let two = {
+        template:`<div>学生管理系统</div>`,
+    }
+
+    let myRouter = new VueRouter({
+        routes:[
+            {path:'/index',component:one},
+            {path:'/stu',component:two},
+        ]
+    })
+
+    new Vue({
+        el: "#v2",
+        data: {},
+        components:{
+            one:one,
+            two:two,
+        },
+        router:myRouter,
+    })
+</script>
+</body>
+</html>
